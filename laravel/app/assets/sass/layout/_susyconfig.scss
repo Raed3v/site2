@@ -1,0 +1,34 @@
+@import "susy";
+
+$susy: (
+        flow: ltr, // ltr | rtl
+        output: float, // float | isolate
+        math: fluid, // fluid | static (requires column-width)
+        column-width: false, // false | value
+        container: 80%, // length or % | auto
+        container-position: center, // left | center | right | <length> [*2] (grid padding)
+        last-flow: to,
+        columns: 12,
+        gutters: 1/4,
+        gutter-position: after, // before | after | split | inside | inside-static (requires column-width)
+        global-box-sizing: border-box, // content-box | border-box (affects inside/inside-static)
+        debug: (
+                image: show, // show | hide
+                color: rgba(#66f, .25),
+                output: background, // background | overlay
+                toggle: top left,
+        ),
+        use-custom: (
+                background-image: false, // look for background-image mixin
+                background-options: false, // look for background-size, -origin and -clip and other compass/bourbon mixins
+                box-sizing: true, // look for custom box sizing mixin
+                clearfix: false, // true = look for internal clearfix before using micro clearfix
+                rem: true, // look for rem mixin
+        )
+);
+
+$nav_layout: layout( 12 0 fluid float inside);
+
+$gallery_layout: layout( 12 .125 fluid float after);
+
+

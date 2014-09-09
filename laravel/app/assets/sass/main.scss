@@ -1,0 +1,487 @@
+@import "helpers/variables";
+@import "helpers/mixins";
+@import "base/reset";
+@import "layout/susy";
+@import "layout/susyconfig";
+
+///// GLOBALS ///////
+@include border-box-sizing;
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+ // STYLING //
+h1.heading-sg  {
+  -webkit-text-stroke: 1px black;
+  font-family: 'Open Sans';
+  font-size: 3.5em;
+  color: $color-logo;
+  text-align: center;
+  margin-top: .7em;
+  padding: .5em 0;
+}
+
+h2.heading-sub-sg {
+  font-family: 'Lato', sans-serif;
+  font-size: 1em;
+  color: $color-footer;
+  text-align: center;
+  margin-bottom: 1em;
+  a {
+    color: inherit;
+  }
+}
+
+p {
+  font-family: 'Lato', sans-serif;
+}
+
+
+///// LAYOUT /////
+
+.container-sg {
+  @include container;
+}
+
+.header-sg {
+  @include full;
+}
+
+.header-accent-sg {
+  @include full;
+  background-color: $color-primary;
+  height: 8px;
+}
+
+.heading-sg {
+  @include pad(3%);
+}
+
+.heading-sub-sg {
+  @include pad(3%);
+}
+
+
+.nav-sg {
+  @include cf;
+  @include span(3);
+  @include pad(3%);
+  padding-top: 5em;
+  padding-bottom: 3em;
+}
+
+.nav-sg ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.nav-sg ul li a {
+  font-family: 'Open Sans';
+  font-size: 1em;
+  text-decoration: none;
+  color: white;
+  padding: 10.5px 8px;
+  background-color: $color-nav1;
+  display:block;
+}
+
+.nav-sg ul li a:visited {
+  color: white;
+}
+
+.nav-sg ul li a:hover, .nav-sg ul li .current {
+  color: white;
+  background-color: $color-nav2;
+}
+
+.content-prim-sg {
+  @include cf;
+  @include span(last 9);
+  padding-top: 3em;
+  padding-bottom: 3em;
+}
+
+.content-prim-sg h2 {
+  font-family: 'Lato', sans-serif;
+  font-size: 1.25em;
+  color: $color-border;
+  padding: 0 0 1em 0;
+}
+
+.font-sg {
+  @include span(6 of 9);
+}
+
+.copy-sg {
+  @include span(6 of 9);
+  padding: 0 0 1em 0;
+}
+
+.img-grid {
+  @include span(6 of 9);
+}
+
+.swatch {
+  @include span(3 of 9);
+  margin-bottom: gutter(9);
+  height: 3em;
+  padding: 1em;
+  border-radius: 1em;
+  &:nth-child(3n) {
+    @include last;
+  };
+}
+
+.color-primary {
+  background-color: $color-primary;
+}
+.color-logo {
+  background-color: $color-logo;
+}
+.color-content {
+  background-color: $color-content;
+}
+
+.color-price {
+  background-color: $color-price;
+  color: white;
+}
+.color-accent {
+  background-color: $color-accent;
+  color: white;
+}
+.color-footer {
+  background-color: $color-footer;
+  color: white;
+}
+.color-light {
+  background-color: $color-light;
+}
+.color-button {
+  background-color: $color-button;
+}
+.color-border {
+  background-color: $color-border;
+  color: white;
+}
+.color-dark {
+  background-color: $color-dark;
+  color: white;
+}
+.color-nav1 {
+  background-color: $color-nav1;
+  color: white;
+}
+.color-nav2 {
+  background-color: $color-nav2;
+}
+
+
+
+.footer-sg {
+  @include full;
+  @include linearGradient($color-primary, $color-footer);
+  height: 6em;
+  color: white;
+  padding: 2em;
+}
+
+.footer-sg a, a:visited {
+  text-decoration: none;
+  color: white;
+}
+
+
+/////////// MAIN SITE /////////////////////
+
+//change to mixin with svg and png
+html {
+  background: url(http://zamani-flamenco.com/rastro-background1.gif) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.container-main {
+  @include container;
+  background-color: $color-content;
+}
+
+.header-main {
+  @include full;
+  @include cf;
+  background-color: $color-primary;
+  @include box-shadow($horizontal: 0px, $vertical: 7px, $blur: 4px, $color: #2d2d2d)
+}
+
+.header-wrap2 {
+  @include span(last 9);
+}
+
+.header-logo {
+  @include span(3);
+  @include cf;
+  padding: 1em 1em 1em 1.25em;
+}
+
+.header-tagline {
+  @include span(7 of 9);
+  text-align: center;
+}
+
+.header-tagline h1 {
+  font-family: 'Courgette', cursive;
+  font-size: 1.75em;
+  padding: 1.75em 0 .75em 0;
+  color: white;
+}
+
+.user-tools {
+  @include span(last 2 of 9);
+  @include cf;
+  text-align: center;
+  a {
+    text-decoration: none;
+    color: $color-light;
+  }
+}
+
+.cust-login {
+  //@include span(1 of 2);
+  padding: 1em .75em .75em 0;
+}
+
+.view-cart {
+  //@include span(last 1 of 2);
+  padding: .75em .25em .5em 0;
+}
+
+.cart-wrap {
+  @include cf;
+}
+
+
+.cart-wrap .icon-cart {
+  height: 18px;
+  width: 18px;
+  display: inline-block;
+  vertical-align: middle;
+}
+.cart-wrap p {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+
+
+.nav-top {
+  @include span(7 of 9);
+  @include cf;
+  padding: .75em 0;
+  text-align: center;
+  a {
+    color: $color-light;
+  }
+}
+
+.nav-top ul li {
+  display: inline;
+}
+
+.nav-top ul li a {
+  font-family: 'Open Sans';
+  font-size: 1em;
+  text-decoration: none;
+  color: #fbe96b;
+  padding: 2em;
+}
+
+.nav-top ul li a:hover, .nav-top ul li .current {
+  color: $color-logo;
+}
+
+.about-theme h2 {
+  font-family: 'Courgette', cursive;
+  font-size: 1.75em;
+  padding: .5em 0 .5em 0;
+  color: $color-border;
+}
+
+.about-pane {
+  @include span(6 of 9);
+  background-color: white;
+  padding: 2em;
+  border-radius: 1em;
+  color: $color-border;
+  font-size: 1.25em;
+  @include box-shadow($horizontal: 5px, $vertical: 5px, $blur: 3px, $color: #4a4947)
+}
+
+.product-theme h2 {
+  font-family: 'Courgette', cursive;
+  font-size: 1.75em;
+  padding: .5em 0 .5em 0;
+  color: $color-border;
+}
+
+.product-pane {
+  @include span(2 of 9);
+  @include cf;
+  background-color: white;
+  margin-bottom: gutter(9);
+  padding: 1em;
+  border-radius: 1em;
+  @include box-shadow($horizontal: 5px, $vertical: 5px, $blur: 3px, $color: #4a4947)
+}
+
+.product-pane h3 {
+  font-family: 'Lato';
+  font-size: 1.25em;
+  color: black;
+  padding-bottom: .5em;
+}
+
+.product-preview {
+  padding:1px;
+  border:1px solid #021a40;
+}
+
+.footer-main {
+  @include full;
+  @include cf;
+  @include linearGradient($color-primary, $color-footer);
+}
+
+.footer-copy {
+  @include span(3 of 12);
+  padding: 9em 0 1em 1em;
+  color: white;
+  font-family: 'Lato';
+  font-size: .85em;
+}
+
+.footer-section {
+  @include span(2 of 12);
+  padding: 3em 0;
+  color: white;
+  font-family: 'Lato';
+  font-size: .85em;
+}
+
+.footer-section ul li a {
+  text-decoration: none;
+  color: white;
+}
+
+.footer-heading {
+  font-size: 1.4em;
+  font-weight: bold;
+}
+
+
+
+
+.nav-main {
+  @include cf;
+  @include span(3);
+  @include pad(5.5%);
+  padding-top: 2em;
+  padding-bottom: 2em;
+}
+
+.nav-main ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  @include box-shadow($horizontal: 0px, $vertical: 7px, $blur: 3px, $color: #2d2d2d)
+}
+
+.nav-main ul li a {
+  font-family: 'Open Sans';
+  font-size: 1em;
+  text-decoration: none;
+  color: white;
+  padding: 8px 20px;
+  background-color: $color-nav1;
+  display:block;
+}
+
+.nav-main ul li a:visited {
+  color: white;
+}
+
+.nav-main ul li a:hover, .nav-main ul li .current {
+  color: white;
+  background-color: $color-nav2;
+}
+
+.content-main {
+  @include cf;
+  @include span(last 9);
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.form-news {
+  padding: 1.5em;
+}
+
+
+.form-news input {
+  border-radius: 1em;
+  border: 1px solid grey;
+  color: $color-border;
+  font-family: 'Courgette', cursive;
+  font-size: .85em;
+  padding: 8px 20px;
+}
+
+
+.button-news {
+  font-family: 'Courgette', cursive;
+  background-color: #e87b2c;
+  color: $color-border;
+  font-size: .85em;
+  border-radius: 1em;
+  padding: 7px 16px;
+}
+
+.form-search {
+  display: inline-block;
+  border: solid 1px #d2d2d2;
+  padding: 2px 4px;
+  border-radius: 2em;
+  margin: 1em 0;
+  @include box-shadow($horizontal: 0px, $vertical: 1px, $blur: 2px, $color: #2d2d2d)
+}
+
+.field-search input {
+  font: normal 12px/100% 'Lato';
+}
+
+.form-search .field-search {
+  color: #494949;
+  background: #fff;
+  padding: 4px 6px 4px 8px;
+  width: 120px;
+  border: solid 1px #494949;
+  outline: none;
+  border-radius: 2em;
+}
+
+.form-search .button-search {
+  color: #494949;
+  border: solid 1px #494949;
+  font-size: 11px;
+  font-family: 'Lato', sans-serif;
+  height: 27px;
+  width: 27px;
+  text-shadow: 0 1px 1px rgba(0,0,0,.6);
+  text-align: center;
+  border-radius: 2em;
+  background: white;
+}
